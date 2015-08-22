@@ -12,10 +12,12 @@ class Toggl:
     date = datetime.now()
     content_type = "Content-Type: application/json"
     hours = 0
+    toggle_user_id = 1568956
+    workspace_id = 831391
 
     post_template = '{"time_entry": {"duration": %d,"start": "%s","pid": %d,"billable": %s,"created_with": "alfred"}}'
 
-    #curl -v -u 3bc5405b6a6448dc738679d651572563:api_token
+    # curl -v -u 3bc5405b6a6448dc738679d651572563:api_token
     # -H "Content-Type: application/json"
     # -d '{"time_entry":{"duration":28800,"start":"2015-01-01T17:00:00+00:00","pid":10049413,"billable":true,"created_with":"curl"}}'
     # -X POST https://www.toggl.com/api/v8/time_entries
