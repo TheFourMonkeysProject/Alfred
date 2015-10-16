@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="assets/images/4monkeys_sm.jpg">
+
+    <title>Alfred</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="bootstrap/css/cover.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <link href='https://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+    <![endif]-->
+      <style>
+          h1 { font-family: ‘Maven Pro'’, Arial, serif; font-weight: 400; }
+
+      </style>
+  </head>
+
+  <body>
+  <div class="site-wrapper">
+    <div id="my_camera" style="display: none;"></div>
+
+     <script src="bootstrap/js/webcam.js"></script>
+    <!-- Configure a few settings and attach camera -->
+	<script language="JavaScript">
+		Webcam.set({
+			width: 320,
+			height: 240,
+			image_format: 'jpeg',
+			jpeg_quality: 90
+		});
+		Webcam.attach( '#my_camera' );
+	</script>
+
+     <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <!--<h3 class="masthead-brand">Alfred</h3>-->
+              <nav>
+                <ul class="nav masthead-nav">
+                  <!--<li class="active"><a href="#">Home</a></li>-->
+                  <!--<li><a href="#">Features</a></li>-->
+                  <!--<li><a href="#">Contact</a></li>-->
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1>Hello, Matt</h1>
+              <br>
+              <br>
+           <img class="img-circle" src="assets/images/helllo.jpg" alt="Generic placeholder image" width="190" height="190">
+
+          </div>
+
+         <!--<div id="results" style=" display: none;">Your captured image will appear here...</div>-->
+
+
+	<!-- A button for taking snaps -->
+	<form>
+		<input type=button value="Take Snapshot" onClick="take_snapshot()" style=" display: none;">
+	</form>
+         <!-- Code to handle taking the snapshot and displaying it locally -->
+<!--	<script language="JavaScript">
+		setInterval(function take_snapshot() {
+			// take snapshot and get image data
+			Webcam.snap( function(data_uri) {
+
+                var dataURI = data_uri;
+				var binary = atob(dataURI.split(',')[1]);
+                var array = [];
+
+                for(var i = 0; i < binary.length; i++) {
+                      array.push(binary.charCodeAt(i));
+                }
+
+                var bb = new Blob([new Uint8Array(array)], {type: 'image/jpeg'});
+                var fd = new FormData(document.forms[0]);
+                var xhr = new XMLHttpRequest();
+
+                fd.append("file", bb);
+                xhr.open('POST', '/getimage', true);
+                xhr.setRequestHeader("user", "matt");
+                xhr.send(fd);
+			} );
+
+		},3000);
+	</script>-->
+
+
+
+          <div class="mastfoot">
+            <div class="inner">
+              <!--<p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>-->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../assets/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

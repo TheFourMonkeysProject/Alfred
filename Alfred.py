@@ -71,14 +71,16 @@ def parse_input_for_grammar_tree(text):
 
 
 
+alfred.respond("Good afternoon, sir")
 
-while True:
-    inp = input()   # Get the input
-    try:
-        parse_input_for_grammar_tree(inp)
-    except:
-        print("I do not understand the words coming out of your mouth")
-        pass
+alfred.respond("I'm always here for you, sir.")
+#while True:
+#    inp = input()   # Get the input
+#    try:
+#        parse_input_for_grammar_tree(inp)
+#    except:
+#        print("I do not understand the words coming out of your mouth")
+#        pass
 
 
 

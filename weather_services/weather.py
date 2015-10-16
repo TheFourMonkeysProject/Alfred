@@ -5,8 +5,6 @@ import requests
 import time
 import datetime
 
-
-
 class Day:
     def __init__(self, day, text, low, high):
         self.day = day
